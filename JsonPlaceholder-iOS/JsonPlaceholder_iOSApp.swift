@@ -10,11 +10,11 @@ import SwiftUI
 @main
 struct JsonPlaceholder_iOSApp: App {
     let persistenceController = PersistenceController.shared
+    let router = UsersRouter()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            router.listView(context: persistenceController.container.viewContext)
         }
     }
 }
