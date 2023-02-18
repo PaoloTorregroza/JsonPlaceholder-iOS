@@ -27,6 +27,8 @@ class CoreDataStack {
         self.managedObjectContext = context
         publishUsers()
         publishPosts()
+        removeAllUsers()
+        removeAllPosts()
     }
     
     // MARK: Users

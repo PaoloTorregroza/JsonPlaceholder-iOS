@@ -23,12 +23,14 @@ struct UserCard: View {
                         .foregroundColor(.teal)
                     Text(user.phone)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.caption)
                 }
                 HStack {
                     Image(systemName: "mail.fill")
                         .foregroundColor(.teal)
                     Text(user.email)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.caption)
                 }
             }
             VStack {

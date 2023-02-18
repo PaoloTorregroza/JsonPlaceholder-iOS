@@ -12,19 +12,27 @@ struct UsersView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                TextField("User Name", text: $presenter.user)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal)
-                List {
-                    ForEach (presenter.usersModels, id: \.id) { item in
-                        UserCard(user: item, presenter: presenter)
-                            .padding(.vertical)
+            ZStack {
+                VStack {
+                    TextField("User Name", text: $presenter.user)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal)
+                    List {
+                        if presenter.usersModels.count == 0 {
+                            Text("List is empty")
+                        }
+                        ForEach (presenter.usersModels, id: \.id) { item in
+                            UserCard(user: item, presenter: presenter)
+                                .padding(.vertical)
+                        }
+                        .onDelete(perform: presenter.deleteUser)
                     }
-                    .onDelete(perform: presenter.deleteUser)
+                    .navigationTitle("Users")
+                    .navigationBarTitleDisplayMode(.inline)
                 }
-                .navigationTitle("Users")
-                .navigationBarTitleDisplayMode(.inline)
+                if presenter.loading {
+                    ProgressView()
+                }
             }
         }
     }

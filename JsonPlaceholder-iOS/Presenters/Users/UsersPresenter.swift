@@ -17,6 +17,7 @@ class UsersPresenter: ObservableObject {
             usersModels = allUsers
         }
     }
+    @Published var loading = false
     @Published var usersModels: [UserModel] = []
     @Published var user: String = "" {
         didSet {
@@ -25,11 +26,13 @@ class UsersPresenter: ObservableObject {
     }
     
     init(interactor: UsersInteractor) {
+        loading = true
         self.interactor = interactor
         
         interactor.$userModels
             .assign(to: \.allUsers, on: self)
             .store(in: &cancellables)
+        loading = false
     }
     
     func addNewUser(id: Int, name: String, email: String, phone: String) {
@@ -45,12 +48,15 @@ class UsersPresenter: ObservableObject {
     }
     
     func filterUsers() {
+        loading = true
         if user == "" {
             usersModels = allUsers
+            loading = false
             return
         }
         usersModels = allUsers.filter { el in
             return el.name.contains(user)
         }
+        loading = false
     }
 }
