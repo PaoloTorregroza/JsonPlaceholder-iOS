@@ -28,6 +28,6 @@ I am not good at testing application with a low ammount of business logic on the
 
 ## Screenshots
 
-<img src="./ReadmeScreenshots/screenshot1.png" width: "50%">
-<img src="./ReadmeScreenshots/screenshot2.png" width: "50%">
-<img src="./ReadmeScreenshots/screenshot3.png" width: "50%">
+<img src="./ReadmeScreenshots/screenshot1.png" style="width: 400px">
+<img src="./ReadmeScreenshots/screenshot2.png" style="width: 400px">
+<img src="./ReadmeScreenshots/screenshot3.png" style="width: 400px">
