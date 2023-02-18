@@ -28,6 +28,6 @@ I am not good at testing application with a low ammount of business logic on the
 
 ## Screenshots
 
-![screenshot 1](./ReadmeScreenshots/screenshot1.png)
-![screenshot 2](./ReadmeScreenshots/screenshot2.png)
-![screenshot 3](./ReadmeScreenshots/screenshot3.png)
+<img src="./ReadmeScreenshots/screenshot1.png" width: "50%">
+<img src="./ReadmeScreenshots/screenshot2.png" width: "50%">
+<img src="./ReadmeScreenshots/screenshot3.png" width: "50%">
